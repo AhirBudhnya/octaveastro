@@ -1,10 +1,15 @@
-function y = Trimshamsa(x)
-# usage: Trimshamsha (x)
-# x is a structure which has two fields: longitude Rashi
-# Longitude position to be mentioned in degrees
+# usage: Trimshamsha (Longitude, Rashiname)
+# Rashi name can be given as Ar, Ta...
+# Longitude position to be mentioned in integer or decimal format
 # This function calculates the trimshamsa of the planet
+# Example Usage: 
+# If Rashiname = Ar and Longitude = 15.44
+# y = Trimshamsa ("15.44","Ar");
+
+function y = Trimshamsa(Longitude, Rashiname)
 
 %Trimshamsa table in an array with Degrees x Rashi dimension
+
 trimshamsha_table = {...
 "Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta";...
 "Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta","Ar","Ta";...
@@ -44,5 +49,13 @@ trimshamsha_table = {...
 "Li","Sc","Li","Sc","Li","Sc","Li","Sc","Li","Sc","Li","Sc";...
 };
 
-y = trimshamsha_table(x(1), x(2));
+RasiNumber = Find_Rasi_number (Rashiname);
+Rasi = str2num(RasiNumber);
+
+% The following function converts the Longitude argument string to number 
+% and takes the ceiling value to support decimals
+
+LongiField = ceil (str2num(Longitude));
+
+y = trimshamsha_table(LongiField, Rasi);
 endfunction
