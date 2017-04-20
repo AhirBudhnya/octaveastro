@@ -55,7 +55,6 @@ Rasi = str2num(RasiNumber);
 % The following function converts the Longitude argument string to number 
 % and takes the ceiling value to support decimals
 
-% LongiField = ceil (str2num(Longitude));
 LongiField = ceil (Longitude);
 
 y = trimshamsha_table(LongiField, Rasi);
