@@ -4,7 +4,7 @@
 # This function calculates the trimshamsa of the planet
 # Example Usage: 
 # If Rashiname = Ar and Longitude = 15.44
-# y = Trimshamsa ("15.44","Ar");
+# y = Trimshamsa (15.44,"Ar");
 
 function y = Trimshamsa(Longitude, Rashiname)
 
@@ -55,7 +55,8 @@ Rasi = str2num(RasiNumber);
 % The following function converts the Longitude argument string to number 
 % and takes the ceiling value to support decimals
 
-LongiField = ceil (str2num(Longitude));
+% LongiField = ceil (str2num(Longitude));
+LongiField = ceil (Longitude);
 
 y = trimshamsha_table(LongiField, Rasi);
 endfunction
