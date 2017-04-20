@@ -52,8 +52,7 @@ trimshamsha_table = {...
 RasiNumber = Find_Rasi_number (Rashiname);
 Rasi = str2num(RasiNumber);
 
-% The following function converts the Longitude argument string to number 
-% and takes the ceiling value to support decimals
+% We take the ceiling value to support decimals
 
 LongiField = ceil (Longitude);
 
